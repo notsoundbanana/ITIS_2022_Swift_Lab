@@ -58,11 +58,8 @@ struct Task1: HomeworkService {
         var result = [Character]()
         
         for i in 0..<strings.count {
-            if strings[i].count > 1 {
+            if strings[i].count >= 1 {
                 result.append(strings[i].first!)
-            }
-            else{
-                
             }
         }
         return result

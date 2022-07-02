@@ -1,10 +1,10 @@
-class Person: Talk, Dance{
+class Person: Talk, Dance {
     fileprivate var name: String
     fileprivate var surname: String
     fileprivate var subname: String
     fileprivate var age: Int
     
-    init(name: String, surname: String, subname: String, age: Int){
+    init(name: String, surname: String, subname: String, age: Int) {
         self.name = name
         self.surname = surname
         self.subname = subname
@@ -21,7 +21,7 @@ class Person: Talk, Dance{
 }
 
 
-class Visitor: Person{
+class Visitor: Person {
     var books: [Book] = []
     
     override func greeting() {
@@ -32,13 +32,13 @@ class Visitor: Person{
         print("Я не могу танцевать, я посетитель бибиотеки")
     }
     
-    func addBook(book: Book){
+    func addBook(book: Book) {
         books.append(book)
     }
 }
 
 
-class Staff: Person{
+class Staff: Person {
     private var tables: [Table] = []
     private var chairs: [Chair] = []
     
@@ -50,17 +50,17 @@ class Staff: Person{
         print("Я не могу танцевать, я работник бибиотеки")
     }
     
-    func addTable(table: Table){
+    func addTable(table: Table) {
         tables.append(table)
     }
     
-    func addChair(chair: Chair){
+    func addChair(chair: Chair) {
         chairs.append(chair)
     }
     
 }
 
-class Administrator: Person{
+class Administrator: Person {
     public let post: Post = .administrator
     public var cabinetNumber: Int
     
@@ -78,7 +78,7 @@ class Administrator: Person{
     }
 }
 
-class PreAdministrator: Person{
+class PreAdministrator: Person {
     public let post: Post = .preDirector
     public var cabinetNumber: Int
     
@@ -97,48 +97,48 @@ class PreAdministrator: Person{
 }
 
 
-enum Post{
+enum Post {
     case administrator
     case preDirector
 }
 
-enum Weight{
+enum Weight {
     case heavy
     case light
 }
 
-protocol Talk{
+protocol Talk {
     func greeting()
 }
 
-protocol Dance{
+protocol Dance {
     func dance()
 }
 
 
-struct Table{
+struct Table {
     var numberOfLegs: Int
     var weight: Weight = .heavy
     
-    init(numberOfLegs: Int){
+    init(numberOfLegs: Int) {
         self.numberOfLegs = numberOfLegs
     }
     
 }
 
-struct Book{
+struct Book {
     var name: String
     
-    init(name: String){
+    init(name: String) {
         self.name = name
     }
 }
 
-struct Chair{
+struct Chair {
     var material: String
     var weight: Weight = .light
     
-    init(material: String){
+    init(material: String) {
         self.material = material
     }
 }
